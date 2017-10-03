@@ -1,0 +1,949 @@
+Starting standalone
+[
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect",
+    "port": 3000,
+    "host": "0.0.0.0",
+    "websocket": true,
+    "showRealIP": true,
+    "provides": [
+      "connect",
+      "http"
+    ],
+    "consumes": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.basicauth",
+    "username": "michael",
+    "password": "455ileM",
+    "consumes": [
+      "connect"
+    ],
+    "provides": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.static",
+    "prefix": "/static",
+    "provides": [
+      "connect.static"
+    ],
+    "consumes": [
+      "connect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.error/error_handler.js",
+    "scope": "standalone",
+    "provides": [
+      "connect.error"
+    ],
+    "consumes": [
+      "connect",
+      "connect.static",
+      "connect.render",
+      "connect.render.ejs"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.remote-address",
+    "consumes": [
+      "connect"
+    ],
+    "provides": [
+      "connect.remote-address"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.render",
+    "provides": [
+      "connect.render"
+    ],
+    "consumes": [
+      "connect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.render.ejs",
+    "provides": [
+      "connect.render.ejs"
+    ],
+    "consumes": [
+      "connect.render"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.redirect",
+    "trustedDomainsRe": {},
+    "consumes": [
+      "connect"
+    ],
+    "provides": [
+      "connect.redirect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/node_modules/connect-architect/connect.cors",
+    "consumes": [
+      "connect"
+    ],
+    "provides": [
+      "connect.cors"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.connect.favicon/favicon.js",
+    "provides": [
+      "connect.favicon"
+    ],
+    "consumes": [
+      "connect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.core/ext.js",
+    "provides": [
+      "ext",
+      "Plugin"
+    ],
+    "consumes": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.ide.server/plugins.js",
+    "blacklist": {
+      "c9.ide.server": true,
+      "c9.ide.test.selenium": true
+    },
+    "whitelist": {
+      "c9.core": true,
+      "c9.fs": true,
+      "c9.automate": true,
+      "c9.login.client": true,
+      "c9.vfs.client": true,
+      "c9.cli.bridge": true,
+      "c9.nodeapi": true,
+      "saucelabs.preview": true,
+      "salesforce.sync": true,
+      "salesforce.language": true
+    },
+    "provides": [
+      "c9.static.plugins"
+    ],
+    "consumes": [
+      "Plugin",
+      "connect.static"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.preview/statics.js",
+    "provides": [],
+    "consumes": [
+      "connect.static"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.nodeapi/nodeapi.js",
+    "provides": [
+      "c9.static.node"
+    ],
+    "consumes": [
+      "connect.static"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.standalone/standalone.js",
+    "sdk": true,
+    "packed": false,
+    "collab": false,
+    "version": "standalone",
+    "options": {
+      "standalone": true,
+      "startBridge": true,
+      "manifest": {
+        "name": "c9",
+        "description": "New Cloud9 Client",
+        "version": "3.1.3168",
+        "author": "Ajax.org B.V. <info@ajax.org>",
+        "private": true,
+        "main": "bin/c9",
+        "repository": {
+          "type": "git",
+          "url": "http://github.com/c9/core.git"
+        },
+        "dependencies": {
+          "acorn": "2.5.2",
+          "async": "^0.9.0",
+          "base64id": "~0.1.0",
+          "connect": "~2.12.0",
+          "debug": "~0.7.4",
+          "ejs": "~1.0.0",
+          "emmet": "git+https://github.com/cloud9ide/emmet-core.git#2ff6dc06ad",
+          "engine.io": "1.6.9",
+          "engine.io-client": "1.6.9",
+          "jsonm": "1.0.6",
+          "http-error": "~0.0.5",
+          "less": "^2.4.0",
+          "mime": "~1.2.9",
+          "mkdirp": "~0.3.5",
+          "msgpack-js-browser": "~0.1.4",
+          "nak": "git+https://github.com/cloud9ide/nak.git#6deef931594",
+          "netutil": "~0.0.2",
+          "optimist": "~0.6.0",
+          "qs": "0.6.6",
+          "rusha": "^0.8.3",
+          "send": "~0.1.4",
+          "simple-mime": "~0.0.8",
+          "tern": "git+https://github.com/cloud9ide/tern.git#39015d544d4c00c7899fea4c95c2e5bc2720e68e",
+          "tern_from_ts": "git+https://github.com/cloud9ide/tern_from_ts.git#84d51dcb9b16b126a206789d4d4237cde2801fe4",
+          "through": "2.2.0",
+          "tmp": "~0.0.20",
+          "uglify-js": "~2.6.2",
+          "ws": "1.0.1",
+          "read": "~1.0.5",
+          "form-data": "~0.2.0",
+          "chai": "~1.5.0",
+          "mocha": "1.8.2"
+        },
+        "scripts": {
+          "start": "node server.js"
+        },
+        "devDependencies": {},
+        "licenses": [],
+        "bundledDependencies": [
+          "ace",
+          "ace_tree",
+          "amd-loader",
+          "architect",
+          "architect-build",
+          "msgpack-js",
+          "c9"
+        ],
+        "c9plugins": {
+          "c9.ide.language": "#241bd6b7de",
+          "c9.ide.language.core": "#bfb5dd2acc",
+          "c9.ide.language.css": "#46ad561506",
+          "c9.ide.language.generic": "#b47cbe58f9",
+          "c9.ide.language.html": "#cdc3960225",
+          "c9.ide.language.html.diff": "#7d6cecfb90",
+          "c9.ide.language.javascript": "#a5c1d05394",
+          "c9.ide.language.javascript.immediate": "#82c426dbca",
+          "c9.ide.language.javascript.eslint": "#342a071123",
+          "c9.ide.language.javascript.tern": "#0545a6385d",
+          "c9.ide.language.javascript.infer": "#b9c2e4bdb8",
+          "c9.ide.language.jsonalyzer": "#a0549e14ff",
+          "c9.ide.language.codeintel": "#0fe92d6f46",
+          "c9.ide.collab": "#a414999755",
+          "c9.ide.local": "#9169fec157",
+          "c9.ide.find": "#e632ecf4be",
+          "c9.ide.find.infiles": "#ad9ff74638",
+          "c9.ide.find.replace": "#8468067976",
+          "c9.ide.run.debug": "#8963fb45c4",
+          "c9.automate": "#47e2c429c9",
+          "c9.ide.ace.emmet": "#6dc4585e02",
+          "c9.ide.ace.gotoline": "#d33220b1e0",
+          "c9.ide.ace.keymaps": "#15e7d23a2a",
+          "c9.ide.ace.repl": "#4b88a85b7b",
+          "c9.ide.ace.split": "#0ae0151c78",
+          "c9.ide.ace.statusbar": "#3aab0b67e0",
+          "c9.ide.ace.stripws": "#042a9936e3",
+          "c9.ide.behaviors": "#6fe68dea3b",
+          "c9.ide.closeconfirmation": "#cee4674141",
+          "c9.ide.configuration": "#a936df26bb",
+          "c9.ide.dialog.wizard": "#7667ec79a8",
+          "c9.ide.fontawesome": "#781602c5d8",
+          "c9.ide.format": "#1e7a5b30a3",
+          "c9.ide.help.support": "#fbe8eb5c36",
+          "c9.ide.imgeditor": "#612e75ef4f",
+          "c9.ide.immediate": "#0b0ee744f9",
+          "c9.ide.installer": "#2921efaf6d",
+          "c9.ide.language.python": "#9fba572b1a",
+          "c9.ide.language.go": "#6ce1c7a7ef",
+          "c9.ide.navigate": "#5d5707058c",
+          "c9.ide.newresource": "#981a408a7b",
+          "c9.ide.openfiles": "#2ae85a9e33",
+          "c9.ide.preview": "#5f5fff0185",
+          "c9.ide.preview.browser": "#829f0ac50f",
+          "c9.ide.preview.markdown": "#c3174d86e0",
+          "c9.ide.pubsub": "#99b7289040",
+          "c9.ide.readonly": "#7421caab61",
+          "c9.ide.recentfiles": "#7c099abf40",
+          "c9.ide.remote": "#301d2ab519",
+          "c9.ide.processlist": "#2b12cd1bdd",
+          "c9.ide.run": "#3cd1f257ca",
+          "c9.ide.run.build": "#0598fff697",
+          "c9.ide.run.debug.xdebug": "#054367574c",
+          "c9.ide.save": "#25a63f31e2",
+          "c9.ide.scm": "#637a68cd04",
+          "c9.ide.terminal.monitor": "#5a6a54ce24",
+          "c9.ide.test": "#102942ae4e",
+          "c9.ide.test.mocha": "#38151a98c3",
+          "c9.ide.theme.flat": "#81dadeee55",
+          "c9.ide.threewaymerge": "#229382aa0b",
+          "c9.ide.undo": "#b028bcb4d5",
+          "c9.ide.upload": "#e4351f5a2b",
+          "c9.ide.welcome": "#7b75aefc28",
+          "c9.ide.guide": "#19f6087429"
+        },
+        "revision": "32fc12bf922288d0c2b518c73aa75e19f14bed8b"
+      },
+      "workspaceDir": "/home/root/programming",
+      "projectName": "programming",
+      "homeDir": "/home/root",
+      "workspaceId": "devel",
+      "workspaceName": "devel",
+      "tmpdir": "/tmp",
+      "home": "/home/root",
+      "uid": "-1",
+      "dev": true,
+      "sdk": true,
+      "pid": 1687,
+      "port": 3000,
+      "host": "0.0.0.0",
+      "testing": false,
+      "platform": "linux",
+      "arch": "ia32",
+      "tmux": "/home/root/.c9/bin/tmux",
+      "nakBin": "/home/root/c9sdk/node_modules/nak/bin/nak",
+      "bashBin": "bash",
+      "nodeBin": [
+        "/home/root/.c9/node/bin/node",
+        "/usr/bin/node"
+      ],
+      "installPath": "/home/root/.c9",
+      "correctedInstallPath": "~/.c9",
+      "staticPrefix": "/static",
+      "projectUrl": "/workspace",
+      "ideBaseUrl": "http://c9.io",
+      "previewUrl": "/preview",
+      "dashboardUrl": "https://c9.io/dashboard.html",
+      "accountUrl": "https://c9.io/account",
+      "apiUrl": "/api",
+      "homeUrl": "/home",
+      "collab": false,
+      "installed": true,
+      "packed": false,
+      "packedThemes": true,
+      "readonly": false,
+      "role": "a",
+      "isAdmin": true,
+      "runners": {
+        "C (make)": {
+          "script": [
+            "set -e",
+            "make \"$file_base_name\"",
+            "if [ \"$debug\" == true ]; then ",
+            "node $HOME/.c9/bin/c9gdbshim.js \"$file_path/$file_base_name\" $args",
+            "else",
+            "chmod 755 \"$file_path/$file_base_name\"",
+            "\"$file_path/$file_base_name\" $args",
+            "fi"
+          ],
+          "info": "Compiling $file ...",
+          "debugger": "gdb",
+          "$debugDefaultState": true,
+          "env": {},
+          "selector": "^.*\\.c$",
+          "caption": "C (make)",
+          "$builtin": true
+        },
+        "C (simple)": {
+          "script": [
+            "set -e",
+            "if [ \"$debug\" == true ]; then ",
+            "    gcc -ggdb3 -O0 -std=c99 $file -o \"$file\".o",
+            "    chmod 755 $file.o",
+            "    node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args",
+            "else",
+            "    gcc -std=c99 $file -o $file.o",
+            "    chmod 755 \"$file.o\"",
+            "    \"$file.o\" $args",
+            "fi"
+          ],
+          "info": "Running \"$file\"",
+          "debugger": "gdb",
+          "$debugDefaultState": false,
+          "env": {},
+          "selector": "^.*\\.c$",
+          "caption": "C (simple)",
+          "$builtin": true
+        },
+        "C++ (simple)": {
+          "script": [
+            "set -e",
+            "if [ \"$debug\" == true ]; then ",
+            "/usr/bin/g++ -ggdb3 -std=c++11 $file -o $file.o",
+            "chmod 755 \"$file.o\"",
+            "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args",
+            "else",
+            "/usr/bin/g++ -std=c++11 $file -o $file.o",
+            "chmod 755 $file.o",
+            "$file.o $args",
+            "fi"
+          ],
+          "info": "Running $file",
+          "debugger": "gdb",
+          "$debugDefaultState": false,
+          "env": {},
+          "selector": "^.*\\.(cpp|cc)$",
+          "caption": "C++ (simple)",
+          "$builtin": true
+        },
+        "CoffeeScript": {
+          "cmd": [
+            "coffee",
+            "$file",
+            "$args"
+          ],
+          "debug": [
+            "--debug-brk=5454"
+          ],
+          "selector": "source.coffee",
+          "caption": "CoffeeScript",
+          "$builtin": true
+        },
+        "Java (single-file)": {
+          "script": [
+            "javac $file_name",
+            "java $file_base_name"
+          ],
+          "info": "Building $file_name and running $file_base_name",
+          "selector": "^.*\\.(java)$",
+          "caption": "Java (single-file)",
+          "$builtin": true
+        },
+        "Java (workspace)": {
+          "script": [
+            "ROOT=`pwd`",
+            "printf \"\\033[01;34mCompiling all files in\\033[00m \\033[01;31m$ROOT\\033[00m\n\"",
+            "OUT_DIR=\"$([ -f .bin ] && rm -r .bin; mkdir -p .bin ; echo .bin)\"",
+            "FILES=\"$(find . -path './.c9*' -prune -o -print | grep '.*\\.java' | sed 's:^./::g' | tr '\n' ' ')\"",
+            "MAIN_CLASS=\"$(echo $file | sed \"s:$ROOT/::g\" | sed 's:.java$::g' | sed 's:/:.:g')\"",
+            "COMPILED_FILES=\"$(javac -d $OUT_DIR $FILES)\"",
+            "java -classpath \"$OUT_DIR\" \"$MAIN_CLASS\" \"$args\""
+          ],
+          "env": {},
+          "info": "\\033[01;34mRunning\\033[00m \\033[01;31m$file_name\\033[00m\n",
+          "selector": "^.*\\.(java)$",
+          "caption": "Java (workspace)",
+          "$builtin": true
+        },
+        "Meteor": {
+          "cmd": [
+            "meteor",
+            "$args"
+          ],
+          "info": "Meteor",
+          "working_dir": "$project_path",
+          "env": {
+            "NODE_OPTIONS": "${debug?--debug-brk=5757}"
+          },
+          "pathMap": [
+            {
+              "toInternal": {
+                "regex": "^app/",
+                "replacement": "/"
+              },
+              "toExternal": {
+                "regex": "^/(?=[^.])",
+                "replacement": "app/"
+              }
+            }
+          ],
+          "disabled": {
+            "liveUpdate": true
+          },
+          "debugger": "v8",
+          "debugport": 5757,
+          "caption": "Meteor",
+          "$builtin": true
+        },
+        "Mocha": {
+          "cmd": [
+            "mocha",
+            "${debug?--debug-brk}",
+            "$file",
+            "$args"
+          ],
+          "info": "Mocha-testing $project_path$file_name",
+          "working_dir": "$project_path",
+          "env": {},
+          "debugger": "v8",
+          "debugport": 5858,
+          "caption": "Mocha",
+          "$builtin": true
+        },
+        "Node.js": {
+          "cmd": [
+            "node",
+            "${debug?--nocrankshaft}",
+            "${debug?--nolazy}",
+            "${debug?`node --version | grep -vqE \"v0\\..\\.\" && echo --nodead_code_elimination`}",
+            "${debug?--debug-brk=15454}",
+            "$file",
+            "$args"
+          ],
+          "debugger": "v8",
+          "debugport": 15454,
+          "selector": "source.js",
+          "caption": "Node.js",
+          "$builtin": true
+        },
+        "PHP (built-in web server)": {
+          "cmd": [
+            "php",
+            "${debug?-d}",
+            "${debug?xdebug.remote_enable=1}",
+            "-S",
+            "$ip:$port"
+          ],
+          "selector": "^.*\\.(php)$",
+          "working_dir": "$project_path",
+          "debugger": "xdebug",
+          "debugport": 9000,
+          "env": {
+            "XDEBUG_CONFIG": "idekey=cloud9ide remote_host=localhost remote_port=9000 remote_mode=req"
+          },
+          "info": "Starting PHP built-in web server, serving \\033[01;34m$hostname_path\\033[00m.",
+          "caption": "PHP (built-in web server)",
+          "$builtin": true
+        },
+        "PHP (cli)": {
+          "cmd": [
+            "php",
+            "${debug?-d}",
+            "${debug?xdebug.remote_enable=1}",
+            "$file",
+            "$args"
+          ],
+          "selector": "^.*\\.(php|phar)$",
+          "info": "Running PHP script $file",
+          "working_dir": "$project_path",
+          "debugger": "xdebug",
+          "debugport": 9000,
+          "env": {
+            "XDEBUG_CONFIG": "idekey=cloud9ide remote_host=localhost remote_port=9000 remote_mode=req"
+          },
+          "caption": "PHP (cli)",
+          "$builtin": true
+        },
+        "Python (interactive mode)": {
+          "cmd": [
+            "python",
+            "-i"
+          ],
+          "info": "Hit \\033[01;34mCtrl-D\\033[00m to exit.\n",
+          "env": {
+            "PYTHONPATH": "$python_path"
+          },
+          "caption": "Python (interactive mode)",
+          "$builtin": true
+        },
+        "Python": {
+          "cmd": [
+            "$python",
+            "$file",
+            "$args"
+          ],
+          "selector": "^.*\\.(python|py)$",
+          "env": {
+            "PYTHONPATH": "$python_path"
+          },
+          "caption": "Python",
+          "$builtin": true
+        },
+        "Ruby on Rails": {
+          "cmd": [
+            "rails",
+            "s"
+          ],
+          "env": {},
+          "working_dir": "$project_path",
+          "selector": "source.ru",
+          "caption": "Ruby on Rails",
+          "$builtin": true
+        },
+        "Ruby": {
+          "cmd": [
+            "ruby",
+            "$file",
+            "$args"
+          ],
+          "env": {},
+          "selector": "^.*\\.(ruby|rb)$",
+          "caption": "Ruby",
+          "$builtin": true
+        },
+        "Shell command": {
+          "cmd": [
+            "$command",
+            "$args"
+          ],
+          "caption": "Shell command",
+          "$builtin": true
+        },
+        "Shell script": {
+          "cmd": [
+            "bash",
+            "-i",
+            "-l",
+            "$file",
+            "$args"
+          ],
+          "selector": "^.*\\.(sh)$",
+          "caption": "Shell script",
+          "$builtin": true
+        },
+        "go": {
+          "script": [
+            "set -e",
+            "if [ \"$debug\" == true ]; then ",
+            "    go build -gcflags \"-N -l\" $file",
+            "    node $HOME/.c9/bin/c9gdbshim.js \"$file_path/$file_base_name\" $args",
+            "else",
+            "    go run $file $args",
+            "fi"
+          ],
+          "info": "Running ... $file",
+          "debugger": "gdb",
+          "$debugDefaultState": false,
+          "env": {},
+          "selector": "source.go",
+          "caption": "go",
+          "$builtin": true
+        },
+        "io.js": {
+          "cmd": [
+            "iojs",
+            "${debug?--nocrankshaft}",
+            "${debug?--nolazy}",
+            "${debug?--nodead_code_elimination}",
+            "${debug?--debug-brk=15455}",
+            "$file",
+            "$args"
+          ],
+          "debugger": "v8",
+          "debugport": 15455,
+          "caption": "io.js",
+          "$builtin": true
+        }
+      },
+      "builders": {
+        "CoffeeScript": {
+          "cmd": [
+            "coffee",
+            "-c",
+            "$file"
+          ],
+          "selector": "source.coffee",
+          "caption": "CoffeeScript",
+          "$builtin": true
+        },
+        "SASS (scss)": {
+          "cmd": [
+            "scss",
+            "--update",
+            "$file"
+          ],
+          "selector": "source.scss",
+          "caption": "SASS (scss)",
+          "$builtin": true
+        },
+        "less": {
+          "cmd": [
+            "bash",
+            "-c",
+            "lessc $file ${file/\\.less/.css/}; echo; echo 'Built $file > ${file/\\.less/.css/}.'"
+          ],
+          "selector": "source.less",
+          "caption": "less",
+          "$builtin": true
+        },
+        "stylus": {
+          "cmd": [
+            "stylus",
+            "$file"
+          ],
+          "selector": "source.styl",
+          "caption": "stylus",
+          "$builtin": true
+        },
+        "typescript": {
+          "cmd": [
+            "tsc",
+            "$file"
+          ],
+          "selector": "source.ts",
+          "caption": "typescript",
+          "$builtin": true
+        }
+      },
+      "themePrefix": "/static/standalone/skin",
+      "cdn": {
+        "version": "standalone",
+        "cacheDir": "/home/root/c9sdk/settings/../build",
+        "compress": false,
+        "baseUrl": ""
+      },
+      "mount": {
+        "fusermountBin": "fusermount",
+        "curlftpfsBin": "curlftpfs",
+        "sshfsBin": "sshfs"
+      },
+      "saucelabs": {
+        "serverURL": null,
+        "account": {
+          "username": "saucefree000093",
+          "apikey": "3227f6a3-3861-4a56-8b27-e756ce0bba20"
+        },
+        "assumeConnected": true
+      },
+      "support": {
+        "userSnapApiKey": "e3d3b232-1c21-4961-b73d-fbc8dc7be1c3"
+      },
+      "user": {
+        "id": -1,
+        "name": "johndoe",
+        "fullname": "John Doe",
+        "email": "johndoe@example.org",
+        "pubkey": null
+      },
+      "project": {
+        "id": 2,
+        "name": "projectname",
+        "contents": null,
+        "descr": "descr"
+      },
+      "analytics": {
+        "segmentio": {
+          "secret": "12346",
+          "flushAt": 1,
+          "integrations": {
+            "All": true
+          }
+        }
+      },
+      "raygun": {
+        "server": {
+          "apiKey": "1234"
+        },
+        "client": {
+          "apiKey": "1234"
+        }
+      },
+      "pricing": {
+        "containers": []
+      },
+      "localExtend": true,
+      "extendDirectory": "/home/root/c9sdk/settings/../plugins",
+      "extendOptions": {
+        "user": {
+          "id": -1,
+          "name": "johndoe",
+          "fullname": "John Doe",
+          "email": "johndoe@example.org",
+          "pubkey": null
+        },
+        "project": {
+          "id": 2,
+          "name": "projectname",
+          "contents": null,
+          "descr": "descr"
+        },
+        "readonly": false
+      },
+      "debug": false
+    },
+    "installPath": "/home/root/.c9",
+    "correctedInstallPath": "~/.c9",
+    "debug": false,
+    "workspaceDir": "/home/root/programming",
+    "projectUrl": "/workspace",
+    "homeUrl": "/home",
+    "workspaceType": null,
+    "provides": [
+      "api",
+      "passport"
+    ],
+    "consumes": [
+      "connect.static",
+      "connect",
+      "preview.handler",
+      "connect.render",
+      "connect.render.ejs"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/vfs.server.js",
+    "provides": [
+      "vfs.server"
+    ],
+    "consumes": [
+      "api",
+      "passport",
+      "connect",
+      "connect.render",
+      "connect.render.ejs",
+      "connect.remote-address",
+      "vfs.cache",
+      "analytics"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.error/logger.raygun_noop.js",
+    "provides": [
+      "error.logger"
+    ],
+    "consumes": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.preview/preview.handler.js",
+    "provides": [
+      "preview.handler"
+    ],
+    "consumes": [
+      "connect.render",
+      "connect.render.ejs",
+      "connect.redirect",
+      "connect.static",
+      "error.logger",
+      "metrics"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/cache.js",
+    "provides": [
+      "vfs.cache"
+    ],
+    "consumes": [
+      "Plugin",
+      "vfs.connect",
+      "metrics"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/download.js",
+    "provides": [
+      "vfs.download"
+    ],
+    "consumes": [
+      "Plugin",
+      "vfs.cache"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/filelist.js",
+    "provides": [
+      "vfs.filelist"
+    ],
+    "consumes": [
+      "Plugin",
+      "vfs.cache",
+      "connect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/fetchcache.js",
+    "provides": [
+      "vfs.fetchcache"
+    ],
+    "consumes": [
+      "Plugin",
+      "vfs.cache",
+      "connect"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/statics.js",
+    "provides": [
+      "smithio.server"
+    ],
+    "consumes": [
+      "Plugin",
+      "connect.static"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.analytics/mock_analytics.js",
+    "provides": [
+      "analytics"
+    ],
+    "consumes": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.metrics/mock_metrics.js",
+    "provides": [
+      "metrics"
+    ],
+    "consumes": []
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.vfs.server/vfs.connect.standalone.js",
+    "workspaceDir": "/home/root/programming",
+    "extendDirectory": "/home/root/c9sdk/settings/../plugins",
+    "extendOptions": {
+      "user": {
+        "id": -1,
+        "name": "johndoe",
+        "fullname": "John Doe",
+        "email": "johndoe@example.org",
+        "pubkey": null
+      },
+      "project": {
+        "id": 2,
+        "name": "projectname",
+        "contents": null,
+        "descr": "descr"
+      },
+      "readonly": false
+    },
+    "installPath": "/home/root/.c9",
+    "collab": false,
+    "nakBin": "/home/root/c9sdk/node_modules/nak/bin/nak",
+    "nodeBin": [
+      "/home/root/.c9/node/bin/node",
+      "/usr/bin/node"
+    ],
+    "tmuxBin": "/home/root/.c9/bin/tmux",
+    "vfs": {
+      "defaultEnv": {
+        "CUSTOM": 43
+      },
+      "debug": false,
+      "inProcess": false
+    },
+    "provides": [
+      "vfs.connect"
+    ],
+    "consumes": [
+      "Plugin",
+      "api"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.static/cdn.js",
+    "useBrowserCache": false,
+    "cacheFiles": true,
+    "provides": [],
+    "consumes": [
+      "connect",
+      "connect.cors",
+      "connect.static",
+      "cdn.build"
+    ]
+  },
+  {
+    "packagePath": "/home/root/c9sdk/plugins/c9.static/build.js",
+    "version": "standalone",
+    "cache": "/home/root/c9sdk/settings/../build",
+    "compress": false,
+    "baseUrl": "",
+    "config": "standalone",
+    "provides": [
+      "cdn.build"
+    ],
+    "consumes": [
+      "Plugin",
+      "connect.static"
+    ]
+  }
+]
+Cloud9 is up and running
